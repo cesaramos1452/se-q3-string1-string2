@@ -4,7 +4,7 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "cesaramos1452"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +28,12 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    donut_num = 'Number of donuts: '
+
+    if count >= 10:
+        return donut_num + 'many'
+    else:
+        return donut_num + str(count)
 
 
 # B. both_ends
@@ -42,8 +46,10 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
+    if len(s) < 2:
+        return ''
+    else:
+        return s[0:2] + s[-2:]
 
 
 # C. fix_start
@@ -58,8 +64,10 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
-    return
+    new_string = s.replace(s[0], '*')
+    change_char = list(new_string)
+    change_char[0] = s[0]
+    return "".join(change_char)
 
 
 # D. mix_up
@@ -73,8 +81,15 @@ def fix_start(s):
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    str_1 = list(a)
+    str_2 = list(b)
+
+    str_1[0] = b[0]
+    str_1[1] = b[1]
+
+    str_2[0] = a[0]
+    str_2[1] = a[1]
+    return ''.join(str_1) + ' ' + ''.join(str_2)
 
 
 # Provided simple test() function used in main() to print

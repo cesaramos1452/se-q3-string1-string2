@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "cesaramos1452"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,12 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) < 3:
+        return s
+    elif len(s) > 3 and s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 # E. not_bad
@@ -37,9 +41,18 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    not_string = s.find('not')
+    bad_string = s.find('bad')
+    replace_string = s[not_string:]
+    if not_string > bad_string:
+        return s
+    elif not_string < bad_string and replace_string[-1] == '!':
+        return s.replace(replace_string, 'good!')
+    else:
+        return s.replace(replace_string, 'good')
 
+
+print(not_bad('This dinner is not that bad!'))
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -52,8 +65,23 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    if len(a) % 2 != 0:
+        x = len(a) // 2
+        str_1 = a[0: x+1]
+        str_2 = a[x+1:]
+    elif len(a) % 2 == 0:
+        x = len(a) // 2
+        str_1 = a[0: x]
+        str_2 = a[x:]
+    if len(b) % 2 != 0:
+        x = len(b) // 2
+        str_3 = b[0: x+1]
+        str_4 = b[x+1:]
+    elif len(b) % 2 == 0:
+        x = len(b) // 2
+        str_3 = b[0: x]
+        str_4 = b[x:]
+    return str_1 + str_3 + str_2 + str_4
 
 
 # Provided simple test() function used in main() to print
